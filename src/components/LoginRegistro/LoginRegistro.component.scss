@@ -6,9 +6,50 @@
  font-family: Poiret One, cursive ;
  font-size: 30px;
 
- 
+
  form {
     border: 3px solid #f1f1f1;
+}
+.prueba{
+  width: 100%;
+
+}
+.añadir{
+  background-color: green;
+  color: white;
+    cursor: pointer;
+    width: 7%;
+    height: 5%;
+    font-family: Poiret One, cursive ;
+    font-size: 25px;
+    border:solid white 2px;
+    border-radius: 50%;
+
+
+
+
+
+}
+.etiquetas{
+margin-left:9%;
+  width: 80%;
+  height: 100px;
+  border: solid black 1px;
+
+}
+.añadir:hover{
+  background: darken(green, 2);
+}
+select{
+	color:white;
+	background: black;
+	width: 90%;
+	height: 40px;
+ font-family: Poiret One, cursive ;
+
+	font-size: 20px;
+
+
 }
 
 /* Full-width inputs */

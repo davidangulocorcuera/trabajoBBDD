@@ -13,7 +13,8 @@ export default {
     sLoginEmail: '',
     sLoginPassword: '',
     sNombre: '',
-    sGenero: ''
+    sGenero: '',
+  
     }
   },
   computed: {
@@ -26,6 +27,7 @@ export default {
     btnRegistrar1: function (event){
       this.btLoginRegister = false
     },
+
     btnCancelar: function (event){
       this.btLoginRegister = true
     },

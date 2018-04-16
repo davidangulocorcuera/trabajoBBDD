@@ -36,9 +36,44 @@
     <label for="psw"><b>Repite la contraseña</b></label>
     <input  type="password" required placeholder="Repite la contraseña" v-model = "sRegisterPassword2" >
 
-    <input  type="radio" name="genero" value="hombre" v-model = "sGenero"> Hombre
-    <input  type="radio" name="genero" value="mujer" required placeholder="mujer" v-model = "sGenero"> Mujer
+    <input  type="radio" name="genero" value="hombre" v-model = "sGenero"><b> Hombre</b>
+    <input  type="radio" name="genero" value="mujer" required placeholder="mujer" v-model = "sGenero"><b> Mujer</b>
     <br><br>
+    <label for="psw"><b>Añade tus gustos musicales</b></label>
+    <div class = "prueba">
+<br>
+      <select name="queja">
+              <option value="rock">Rock</option>
+              <option value="blues">Blues</option>
+              <option value="flamenco">Flamenco</option>
+           </select>
+             <button  class = "añadir" type="submit"><b>+</b></button>
+               </div>
+               <br>
+             <div class  = "etiquetas">
+
+             </div>
+
+    <br>
+    <label for="psw"><b>Selecciona los instrumentos quesabes tocar</b></label>
+    <div class = "prueba">
+<br>
+      <select name="queja">
+              <option value="guitarra">Guitarra</option>
+              <option value="piano">Piano</option>
+              <option value="bateria">Bateria</option>
+              <button  class = "añadir" type="submit"><b>+</b></button>
+           </select>
+
+             <button  class = "añadir" type="submit"><b>+</b></button>
+
+</div>
+<br>
+             <div class  = "etiquetas">
+
+             </div>
+
+    <br>
 
     <button  class = "botones" v-on:click="btnRegistrarse" type="submit">Registrarse</button>
     <button class = "botonCancelar" v-on:click="btnCancelar" type="submit">Cancelar</button>
