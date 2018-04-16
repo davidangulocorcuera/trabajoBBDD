@@ -1,0 +1,44 @@
+
+<section class="login-registro">
+  <h1>Registro</h1>
+  <div class="login">
+    <div class="imgcontainer">
+   <img src="../../assets/logo.png" alt="Avatar" class="avatar">
+ </div>
+
+ <div class="panelLogin"  v-if= "btLoginRegister">
+   <label for="uname"><b>Username</b></label>
+   <input type="text" placeholder="Enter Username" name="uname" required>
+
+   <label for="psw"><b>Password</b></label>
+   <input type="password" placeholder="Enter Password" name="psw" required>
+
+   <button type="submit">Login</button>
+    <button v-on:click="btnRegistrar1" type="submit">Registrarse</button>
+   <label>
+     <input type="checkbox" checked="checked" name="remember"> Remember me
+   </label>
+ </div>
+
+  <div class="panelRegister"  v-if= "!btLoginRegister">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username"  v-model = "sRegisterEmail">
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password"  placeholder="Enter Password" v-model = "sRegisterPassword">
+
+    <button   v-on:click="btnRegistrarse" type="submit">Registrarse</button>
+     <button  v-on:click="btnCancelar" type="submit">Cancelar</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+
+<!--
+ <div class="container" style="background-color:#f1f1f1">
+   <button type="button" class="cancelbtn">Cancel</button>
+   <span class="psw">Forgot <a href="#">password?</a></span>
+ </div>
+-->
+  </div>
+</section>
