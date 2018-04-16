@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import firebase from 'firebase'
 
+
 Vue.config.productionTip = false
 
 // Initialize Firebase
@@ -17,6 +18,7 @@ var config = {
   messagingSenderId: '524444401805'
 };
 firebase.initializeApp(config);
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

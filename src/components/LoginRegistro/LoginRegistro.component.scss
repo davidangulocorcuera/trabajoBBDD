@@ -3,6 +3,9 @@
  background: white;
  border: double 2px #3199D8;
  border-radius:5px;
+ font-family: Poiret One, cursive ;
+ font-size: 30px;
+
  
  form {
     border: 3px solid #f1f1f1;
@@ -20,7 +23,7 @@ input[type=text], input[type=password] {
 }
 
 /* Set a style for all buttons */
-button {
+.botones {
     background-color:  #3199D8;
     color: white;
     padding: 14px 20px;
@@ -32,13 +35,28 @@ button {
     font-size: 20px;
     font-family: Poiret One, cursive ;
 }
+.botonCancelar{
+  background-color:   #EB5757;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 15px;
+  font-size: 20px;
+  font-family: Poiret One, cursive ;
+}
 
 /* Add a hover effect for buttons */
-button:hover {
+.botones:hover {
   transition:0.7s all;
     background: #0D558D;
 }
-
+.botonCancelar:hover{
+  background-color: #C12222;
+  transition: 0.7s all;
+}
 /* Extra style for the cancel button (red) */
 .cancelbtn {
     width: auto;

@@ -4,6 +4,7 @@ import Principal from '@/components/Principal'
 import LoginRegistro from '@/components/LoginRegistro'
 
 
+
 Vue.use(Router)
 
 export default new Router({
@@ -13,6 +14,7 @@ export default new Router({
       name: 'Principal',
       component: Principal
     },
+
     {
       path: '/login',
       name: 'LoginRegistro',

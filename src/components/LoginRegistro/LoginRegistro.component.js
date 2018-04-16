@@ -7,8 +7,13 @@ export default {
   data () {
     return {
     btLoginRegister : true,
-    sRegisterEmail: ' ',
-    sRegisterPassword: ' ',
+    sRegisterEmail: '',
+    sRegisterPassword: '',
+    sRegisterPassword2: '',
+    sLoginEmail: '',
+    sLoginPassword: '',
+    sNombre: '',
+    sGenero: ''
     }
   },
   computed: {
@@ -34,8 +39,19 @@ export default {
           alert("error en la creacion de cuenta");
         }
       );
+    },
+    btnLogin: function (event){
 
+        firebase.auth().signInWithEmailAndPassword(this.sLoginEmail,this.sLoginPassword).then(
+          function(user){
 
-    }
+          alert("te logeastes correctamente");
+          },
+          function(err){
+            console.log(err)
+            alert("NO TE LOGEASTE" + err);
+          }
+        );
+      }
   }
 }
