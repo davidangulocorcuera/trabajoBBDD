@@ -1,36 +1,45 @@
 
 <section class="login-registro">
-  <h1>Registro</h1>
+  <h1></h1>
   <div class="login">
     <div class="imgcontainer">
    <img src="../../assets/logo.png" alt="Avatar" class="avatar">
  </div>
 
  <div class="panelLogin"  v-if= "btLoginRegister">
-   <label for="uname"><b>Username</b></label>
-   <input type="text" placeholder="Enter Username" name="uname" required>
+   <label for="uname"><b>E-mail</b></label>
+   <input type="text" placeholder="Introduce tu E-mail" name="uname" required>
 
-   <label for="psw"><b>Password</b></label>
-   <input type="password" placeholder="Enter Password" name="psw" required>
+   <label for="psw"><b>Contraseña</b></label>
+   <input type="password" placeholder="Introduce tu contraseña" name="psw" required>
 
-   <button type="submit">Login</button>
+   <button type="submit">Iniciar Sesion</button>
     <button v-on:click="btnRegistrar1" type="submit">Registrarse</button>
    <label>
-     <input type="checkbox" checked="checked" name="remember"> Remember me
+     <input type="checkbox" checked="checked" name="remember"> Recordarme
    </label>
  </div>
 
-  <div class="panelRegister"  v-if= "!btLoginRegister">
-    <label for="uname"><b>Username</b></label>
+  <div class="panelLogin"  v-if= "!btLoginRegister">
+    <label for="uname"><b>E-mail</b></label>
     <input type="text" placeholder="Enter Username"  v-model = "sRegisterEmail">
 
-    <label for="psw"><b>Password</b></label>
+    <label for="psw"><b>Contraseña</b></label>
     <input type="password"  placeholder="Enter Password" v-model = "sRegisterPassword">
-
+    <input type="radio" name="genero" value="hombre"> Hombre
+    <input type="radio" name="genero" value="mujer" required placeholder="mujer"> Mujer
+    <br><br>
+    <select name="queja">
+               <option value="ambiental">Ambiental</option>
+               <option value="social">Social</option>
+               <option value="conflictiva">Conflictiva</option>
+            </select>
+    <br><br>
     <button   v-on:click="btnRegistrarse" type="submit">Registrarse</button>
-     <button  v-on:click="btnCancelar" type="submit">Cancelar</button>
+    <button  v-on:click="btnCancelar" type="submit">Cancelar</button>
+
     <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
+
     </label>
   </div>
 
