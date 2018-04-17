@@ -1,141 +1,119 @@
 @import url('https://fonts.googleapis.com/css?family=Poiret+One');
-.login-registro {
- background: white;
- border: double 2px #3199D8;
- border-radius:5px;
- font-family: Poiret One, cursive ;
- font-size: 30px;
-
-
- form {
-    border: 3px solid #f1f1f1;
-}
-.prueba{
-  width: 100%;
-
-}
-.añadir{
-  background-color: green;
-  color: white;
-    cursor: pointer;
-    width: 7%;
-    height: 5%;
-    font-family: Poiret One, cursive ;
-    font-size: 25px;
-    border:solid white 2px;
-    border-radius: 50%;
-
-
-
-
-
-}
-.etiquetas{
-margin-left:9%;
-  width: 80%;
-  height: 100px;
-  border: solid black 1px;
-
-}
-.añadir:hover{
-  background: darken(green, 2);
-}
-select{
-	color:white;
-	background: black;
-	width: 90%;
-	height: 40px;
- font-family: Poiret One, cursive ;
-
-	font-size: 20px;
-
-
-}
-
-/* Full-width inputs */
-input[type=text], input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-
-}
-
-/* Set a style for all buttons */
-.botones {
-    background-color:  #3199D8;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    border-radius: 15px;
-    font-size: 20px;
-    font-family: Poiret One, cursive ;
-}
-.botonCancelar{
-  background-color:   #EB5757;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  border-radius: 15px;
-  font-size: 20px;
-  font-family: Poiret One, cursive ;
-}
-
-/* Add a hover effect for buttons */
-.botones:hover {
-  transition:0.7s all;
-    background: #0D558D;
-}
-.botonCancelar:hover{
-  background-color: #C12222;
-  transition: 0.7s all;
-}
-/* Extra style for the cancel button (red) */
-.cancelbtn {
-    width: auto;
-    padding: 10px 18px;
-    background-color: #f44336;
-}
-
-/* Center the avatar image inside this container */
-.imgcontainer {
-    text-align: center;
-    margin: 24px 0 12px 0;
-}
-
-/* Avatar image */
-img.avatar {
-    width: 60%;
-
-}
-
-/* Add padding to containers */
-.panelLogin {
-    padding: 16px;
-}
-
-/* The "Forgot password" text */
-span.psw {
-    float: right;
-    padding-top: 16px;
-}
-
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-    span.psw {
-        display: block;
-        float: none;
+ .login-registro {
+     background: white;
+     border: double 2px #3199D8;
+     border-radius:5px;
+     font-family: Poiret One, cursive ;
+     font-size: 30px;
+     form {
+         border: 3px solid #f1f1f1;
     }
-    .cancelbtn {
-        width: 100%;
+     .prueba{
+         width: 100%;
     }
-}
+     .añadir{
+         background-color: green;
+         color: white;
+         cursor: pointer;
+         width: 7%;
+         height: 5%;
+         font-family: Poiret One, cursive ;
+         font-size: 25px;
+         border:solid white 2px;
+         border-radius: 50%;
+    }
+     .etiquetas{
+         margin-left:9%;
+         width: 80%;
+         height: 100px;
+         border: solid black 1px;
+    }
+     .añadir:hover{
+         background: darken(green, 2);
+    }
+     select{
+         color:white;
+         background: black;
+         width: 90%;
+         height: 40px;
+         font-family: Poiret One, cursive ;
+         font-size: 20px;
+    }
+    /* Full-width inputs */
+     input[type=text], input[type=password] {
+         width: 100%;
+         padding: 12px 20px;
+         margin: 8px 0;
+         display: inline-block;
+         border: 1px solid #ccc;
+         box-sizing: border-box;
+    }
+    /* Set a style for all buttons */
+     .botones {
+         background-color: #3199D8;
+         color: white;
+         padding: 14px 20px;
+         margin: 8px 0;
+         border: none;
+         cursor: pointer;
+         width: 100%;
+         border-radius: 15px;
+         font-size: 20px;
+         font-family: Poiret One, cursive ;
+    }
+     .botonCancelar{
+         background-color: #EB5757;
+         color: white;
+         padding: 14px 20px;
+         margin: 8px 0;
+         border: none;
+         cursor: pointer;
+         width: 100%;
+         border-radius: 15px;
+         font-size: 20px;
+         font-family: Poiret One, cursive ;
+    }
+    /* Add a hover effect for buttons */
+     .botones:hover {
+         transition:0.7s all;
+         background: #0D558D;
+    }
+     .botonCancelar:hover{
+         background-color: #C12222;
+         transition: 0.7s all;
+    }
+    /* Extra style for the cancel button (red) */
+     .cancelbtn {
+         width: auto;
+         padding: 10px 18px;
+         background-color: #f44336;
+    }
+    /* Center the avatar image inside this container */
+     .imgcontainer {
+         text-align: center;
+         margin: 24px 0 12px 0;
+    }
+    /* Avatar image */
+     img.avatar {
+         width: 60%;
+    }
+    /* Add padding to containers */
+     .panelLogin {
+         padding: 16px;
+    }
+    /* The "Forgot password" text */
+     span.psw {
+         float: right;
+         padding-top: 16px;
+    }
+    /* Change styles for span and cancel button on extra small screens */
+     @media screen and (max-width: 300px) {
+         span.psw {
+             display: block;
+             float: none;
+        }
+         .cancelbtn {
+             width: 100%;
+        }
+    }
 }
