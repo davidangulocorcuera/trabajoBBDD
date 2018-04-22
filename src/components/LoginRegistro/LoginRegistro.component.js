@@ -7,6 +7,10 @@ export default {
     data() {
         return {
             btLoginRegister: true,
+              btLoginRegister2: false,
+                btLoginRegister3: false,
+
+            lblError : false,
             sRegisterEmail: '',
             sRegisterPassword: '',
             sRegisterPassword2: '',
@@ -23,10 +27,29 @@ export default {
     },
     methods: {
         btnRegistrar1: function(event) {
+            this.btLoginRegister2 = true
             this.btLoginRegister = false
         },
+        btnRegistrar2: function(event) {
+
+          this.btLoginRegister2 = false
+            this.btLoginRegister3 = true
+
+          
+
+        },
+
+
+
         btnCancelar: function(event) {
             this.btLoginRegister = true
+            this.btLoginRegister2 = false
+        },
+        btnVolver: function(event) {
+
+          this.btLoginRegister2 = true
+          this.btLoginRegister3 = false
+
         },
         btnRegistrarse: function(event) {
             firebase.auth().createUserWithEmailAndPassword(this.sRegisterEmail, this.sRegisterPassword).then(
