@@ -7,10 +7,10 @@ export default {
     data() {
         return {
             btLoginRegister: true,
-              btLoginRegister2: false,
-                btLoginRegister3: false,
+            btLoginRegister2: false,
+            btLoginRegister3: false,
 
-            lblError : false,
+            lblError: false,
             sRegisterEmail: '',
             sRegisterPassword: '',
             sRegisterPassword2: '',
@@ -21,10 +21,20 @@ export default {
 
         }
     },
-    computed: {
+    created: function() {
+        //esto se ejecuta antes que todo el programa
+        firebase.auth().onAuthStateChanged((user) => {
+
+            if (user) {
+
+                this.props_blIsLogin = true
+            } else {
+                this.props_blIsLogin = false
+            }
+        });
     },
-    mounted() {
-    },
+    computed: {},
+    mounted() {},
     methods: {
         btnRegistrar1: function(event) {
             this.btLoginRegister2 = true
@@ -32,10 +42,10 @@ export default {
         },
         btnRegistrar2: function(event) {
 
-          this.btLoginRegister2 = false
+            this.btLoginRegister2 = false
             this.btLoginRegister3 = true
 
-          
+
 
         },
 
@@ -47,8 +57,8 @@ export default {
         },
         btnVolver: function(event) {
 
-          this.btLoginRegister2 = true
-          this.btLoginRegister3 = false
+            this.btLoginRegister2 = true
+            this.btLoginRegister3 = false
 
         },
         btnRegistrarse: function(event) {
@@ -74,6 +84,9 @@ export default {
                     alert("NO TE LOGEASTE" + err);
                 }
             );
+        },
+        logout: function(event) {
+            firebase.auth().signOut()
         }
     }
 }
