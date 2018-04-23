@@ -62,13 +62,20 @@ export default {
 
         },
         btnRegistrarse: function(event) {
+
             firebase.auth().createUserWithEmailAndPassword(this.sRegisterEmail, this.sRegisterPassword).then(
                 function(user) {
                     alert("tu cuenta fue creada");
+                    this.btLoginRegister3 = false
+                    this.btLoginRegister = true
+
                 },
                 function(err) {
                     console.log(err)
-                    alert("error en la creacion de cuenta");
+                    alert(err);
+                    this.btLoginRegister2 = true
+                    this.btLoginRegister3 = false
+
                 }
             );
         },
