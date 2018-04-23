@@ -36,12 +36,14 @@ export default {
     computed: {},
     mounted() {},
     methods: {
+
         btnRegistrar1: function(event) {
             this.btLoginRegister2 = true
             this.btLoginRegister = false
         },
+        //deben estar todos los campos completos
         btnRegistrar2: function(event) {
-
+   
             this.btLoginRegister2 = false
             this.btLoginRegister3 = true
 

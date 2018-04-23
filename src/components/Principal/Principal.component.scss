@@ -1,9 +1,11 @@
-
+body{
+  background-image:url('fondo.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
 
 .principal {
-background-color:red;
-height: 300px;
-width: 200px;
   .lr{
     position:absolute;
 top: 6%;
