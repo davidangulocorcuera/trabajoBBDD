@@ -6,6 +6,8 @@ import router from './router'
 import firebase from 'firebase'
 import props from './Mixins/props'
 
+
+
 Vue.config.productionTip = false
 
 // Initialize Firebase
@@ -19,6 +21,7 @@ var config = {
 };
 firebase.initializeApp(config);
 Vue.mixin(props);
+
 
 /* eslint-disable no-new */
 new Vue({

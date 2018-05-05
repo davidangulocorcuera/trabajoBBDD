@@ -1,5 +1,5 @@
 import firebase from 'firebase'
-
+import {EventBus} from '../../events/events_bus';
 export default {
     name: 'login-registro',
     components: {},
@@ -31,6 +31,7 @@ export default {
             } else {
                 this.props_blIsLogin = false
             }
+            EventBus.$emit('loginRegistro_userStateChange',this.props_blIsLogin)
         });
     },
     computed: {},
@@ -43,7 +44,7 @@ export default {
         },
         //deben estar todos los campos completos
         btnRegistrar2: function(event) {
-   
+
             this.btLoginRegister2 = false
             this.btLoginRegister3 = true
 

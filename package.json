@@ -13,11 +13,13 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "bootstrap-vue": "^2.0.0-rc.9",
     "firebase": "^4.12.1",
     "node-sass": "^4.8.3",
     "sass-loader": "^6.0.7",
     "vgc": "0.0.1-prealpha4",
     "vue": "^2.5.2",
+    "vue-beautiful-chat": "^1.0.0",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {

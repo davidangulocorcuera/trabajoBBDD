@@ -30,6 +30,8 @@
            <label  v-if= "lblError" ><b>Las contraseñas no coinciden</b></label>
            <input  type="radio" name="genero" value="hombre" v-model = "sGenero"><b> Hombre</b>
            <input  type="radio" name="genero" value="mujer" required placeholder="mujer" v-model = "sGenero"><b> Mujer</b>
+           <br><br><label for="psw"><b>Introduce tu fecha de nacimiento</b></label>
+           <input type="date">
            <br><br>
            <button  class = "botones" v-on:click="btnRegistrar2" type="submit">Continuar</button>
            <button class = "botonCancelar" v-on:click="btnCancelar" type="submit">Cancelar</button>

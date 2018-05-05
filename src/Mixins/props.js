@@ -6,6 +6,7 @@ export default{
     return {
       //variables globales
       props_blIsLogin: false
+    
     }
   }
 }
