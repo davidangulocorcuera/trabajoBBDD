@@ -40,33 +40,27 @@
         </div>
         <!-- registro2 -->
         <div class="panelLogin"  v-if= "btLoginRegister3">
-           <label for="psw"><b>Añade tus gustos musicales</b></label>
-           <div class = "prueba">
-              <br>
-              <select name="estiloMusica">
-                 <option value="rock">Rock</option>
-                 <option value="blues">Blues</option>
-                 <option value="flamenco">Flamenco</option>
-              </select>
-              <button  class = "añadir" type="submit"><b>+</b></button>
-           </div>
-           <br>
-           <div class  = "etiquetas"></div>
-           <br>
-           <label for="psw"><b>Selecciona los instrumentos que sabes tocar</b></label>
-           <div class = "prueba">
-              <br>
-              <select name="instrumentos">
-                 <option value="guitarra">Guitarra</option>
-                 <option value="piano">Piano</option>
-                 <option value="bateria">Bateria</option>
-                 <button  class = "añadir" type="submit"><b>+</b></button>
-              </select>
-              <button  class = "añadir" type="submit"><b>+</b></button>
-           </div>
-           <br>
-           <div class  = "etiquetas"></div>
-           <br>
+           <label><b>Selecciona tus gustos musicales</b></label>
+
+           <div class = "seleccion">
+
+              <input type="checkbox" name="rock" value="1"> Rock 'n Roll <img src="../../assets/rock.png" alt="rock" width="7%" height="7%"><br>
+              <input type="checkbox" name="blues" value="2" > Blues <img src="../../assets/blues.png" alt="blues" width="7%" height="7%"><br>
+              <input type="checkbox" name="flamenco" value="3"> Flamenco <img src="../../assets/flamenco.png" alt="flamenco" width="7%" height="7%"><br>
+             <input type="checkbox" name="heavy" value="4"> Heavy Metal <img src="../../assets/heavy.png" alt="heavy" width="7%" height="10%"><br>
+               <input type="checkbox" name="rap" value="5" > Rap <img src="../../assets/rap.png" alt="rap" width="7%" height="7%"><br>
+              <input type="checkbox" name="musicaClasica" value="6"> Música Clásica <img src="../../assets/clasica.png" alt="musicaClasica" width="7%" height="7%"><br>
+               <input type="checkbox" name="trap" value="7"> Trap <img src="../../assets/trap.png" alt="trap" width="7%" height="7%"><br>
+              <input type="checkbox" name="boleros" value="8"> Boleros <img src="../../assets/bolero.png" alt="boleros" width="7%" height="7%"><br>
+             <input type="checkbox" name="tango" value="9"> Tangos   <img src="../../assets/tango.png" alt="tangos" width="7%" height="7%"><br>
+               <input type="checkbox" name="techno" value="10"> Techno <img src="../../assets/techno.png" alt="techno" width="7%" height="7%"><br>
+               <input type="checkbox" name="hardcore" value="11"> Hardcore <img src="../../assets/hardcore.png" alt="hardcore" width="7%" height="7%"><br>
+               <input type="checkbox" name="punk" value="12"> Punk <img src="../../assets/punk.png" alt="punk" width="7%" height="7%">
+
+</div>
+
+
+
            <button  class = "botones" v-on:click="btnRegistrarse" type="submit">Registrarse</button>
            <button class = "botonCancelar" v-on:click="btnVolver" type="submit">Volver</button>
            <label>

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Poiret+One');
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
  .login-registro {
      background: white;
      border: double 2px #3199D8;
@@ -100,7 +101,7 @@
     }
 
      img.avatar {
-         width: 60%;
+         width: 90%;
     }
 
      .panelLogin {
@@ -111,7 +112,16 @@
          float: right;
          padding-top: 16px;
     }
-    
+    .seleccion{
+      text-align:left;
+font-family: 'Amatic SC', cursive;
+      border-radius: 3%;
+
+      color:black;
+      font-size: 2rem;
+
+    }
+
      @media screen and (max-width: 300px) {
          span.psw {
              display: block;
