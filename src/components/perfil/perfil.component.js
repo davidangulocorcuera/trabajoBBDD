@@ -38,7 +38,8 @@ export default {
   methods: {
     descargarPerfiles: function(){
       var that=this
-      firebase.firestore().collection("perfiles").get().then(function(querySnapshot) {
+      that.perfiles = []
+      firebase.firestore().collection("perfiles").onSnapshot(function(querySnapshot) {
       querySnapshot.forEach(function(doc) {
       that.perfiles.push(new Perfil(doc.data()))
         // doc.data() is never undefined for query doc snapshots
