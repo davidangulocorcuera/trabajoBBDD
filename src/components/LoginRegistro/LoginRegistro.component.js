@@ -10,6 +10,7 @@ export default {
             btLoginRegister2: false,
             btLoginRegister3: false,
 
+
             lblError: false,
             sRegisterEmail: '',
             sRegisterPassword: '',
@@ -17,17 +18,34 @@ export default {
             sLoginEmail: '',
             sLoginPassword: '',
             sNombre: '',
-            sGenero: '',
+            blHombre: false,
+            blMujer: false,
+            edad:0,
+            sGustosMusicales: [],
 
         }
     },
     created: function() {
         //esto se ejecuta antes que todo el programa
         firebase.auth().onAuthStateChanged((user) => {
-
+            this.props_objuser = user
             if (user) {
 
                 this.props_blIsLogin = true
+                var docRef = firebase.firestore().collection("perfiles").doc(user.uid + "");
+              docRef.get().then(function(doc) {
+                if (doc.exists) {
+                  //this.props_objPerfil = doc.data()
+                  this.setPerfil(doc.id,doc.data())
+                  //console.log("Document data:", doc.data());
+                } else {
+                  // doc.data() will be undefined in this case
+                  console.log("NO EXISTE ESE PERFIL");
+                }
+              }).catch(function(error) {
+                console.log("ERROR DESCARGANDO PERFIL", error);
+              });
+
             } else {
                 this.props_blIsLogin = false
             }
@@ -55,22 +73,34 @@ export default {
 
 
         btnCancelar: function(event) {
+            this.sRegisterEmail = '',
+            this.sRegisterPassword = '',
+            this.sRegisterPassword2 = '',
+            this.sNombre = '',
             this.btLoginRegister = true
             this.btLoginRegister2 = false
+
         },
         btnVolver: function(event) {
-
+            this.sRegisterEmail = '',
+            this.sRegisterPassword = '',
+            this.sRegisterPassword2 = '',
+              this.sNombre = '',
             this.btLoginRegister2 = true
             this.btLoginRegister3 = false
 
         },
         btnRegistrarse: function(event) {
-
+          var that=this
             firebase.auth().createUserWithEmailAndPassword(this.sRegisterEmail, this.sRegisterPassword).then(
+
                 function(user) {
+                  var docRef = firebase.firestore().collection("perfiles");
+                  docRef.doc(user.uid+ "").set({email: that.sRegisterEmail, nombreUsuario: that.sNombre , hombre: that.blHombre , mujer: that.blMujer })
                     alert("tu cuenta fue creada");
-                    this.btLoginRegister3 = false
-                    this.btLoginRegister = true
+                    that.btLoginRegister3 = false
+                    that.btLoginRegister = true
+                    that.sGustosMusicales = []
 
                 },
                 function(err) {

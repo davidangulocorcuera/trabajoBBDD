@@ -3,7 +3,8 @@ import firebase from 'firebase'
 
 class Perfil{
   constructor(datos){
-  this.name = datos.nombre
+  this.name = datos.nombreUsuario
+    this.email = datos.email
   this.edad = datos.edad
   console.log(this.name)
   }
@@ -38,8 +39,9 @@ export default {
   methods: {
     descargarPerfiles: function(){
       var that=this
-      that.perfiles = []
+
       firebase.firestore().collection("perfiles").onSnapshot(function(querySnapshot) {
+        that.perfiles = []
       querySnapshot.forEach(function(doc) {
       that.perfiles.push(new Perfil(doc.data()))
         // doc.data() is never undefined for query doc snapshots
