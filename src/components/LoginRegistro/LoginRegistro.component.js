@@ -96,7 +96,8 @@ export default {
 
                 function(user) {
                   var docRef = firebase.firestore().collection("perfiles");
-                  docRef.doc(user.uid+ "").set({email: that.sRegisterEmail, nombreUsuario: that.sNombre , hombre: that.blHombre , mujer: that.blMujer })
+                  user.sendEmailVerification()
+                  docRef.doc(user.uid+ "").set({email: that.sRegisterEmail, nombreUsuario: that.sNombre , hombre: that.blHombre , mujer: that.blMujer , /*gustosMusicales: that.gustosMusicales*/ })
                     alert("tu cuenta fue creada");
                     that.btLoginRegister3 = false
                     that.btLoginRegister = true
