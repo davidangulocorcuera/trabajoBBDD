@@ -6,6 +6,7 @@ import router from './router'
 import firebase from 'firebase'
 import props from './Mixins/props'
 import firestore from 'firebase/firestore'
+import Chat from 'vue-beautiful-chat'
 
 
 Vue.config.productionTip = false
@@ -23,6 +24,7 @@ firebase.initializeApp(config);
 Vue.use(firebase)
 Vue.use(firestore)
 Vue.mixin(props);
+Vue.use(Chat);
 
 
 /* eslint-disable no-new */
