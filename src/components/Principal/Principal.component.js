@@ -1,11 +1,12 @@
 import LoginRegistro from '../LoginRegistro'
 import chat from '../chat'
 import perfil from '../perfil'
+
 import {EventBus} from '../../events/events_bus'
 
 export default {
   name: 'principal',
-  components: {'loginregistro':LoginRegistro,'chat':chat,'perfil':perfil},
+  components: {'loginregistro':LoginRegistro,'chat':chat,'perfil':perfil },
   props: [],
   data () {
     return {

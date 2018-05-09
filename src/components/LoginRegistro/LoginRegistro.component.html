@@ -8,7 +8,7 @@
         </div>
         <div class="panelLogin"  v-if= "btLoginRegister">
            <label><b>E-mail</b></label>
-           <input  type="text" required placeholder="Introduce tu E-mail" name="E-mailInicio" v-model = "sLoginEmail" >
+           <input  type="text"  placeholder="Introduce tu E-mail" name="E-mailInicio" v-model = "sLoginEmail" required>
            <label><b>Contraseña</b></label>
            <input  type="password" required placeholder="Introduce tu contraseña" name="contraseñaInicio" v-model = "sLoginPassword" >
            <button v-on:click="btnLogin" class = "botones" type="submit">Iniciar Sesion</button>
@@ -20,16 +20,23 @@
         <!-- registro1-->
         <div class="panelLogin"  v-if= "btLoginRegister2">
            <label><b>E-mail</b></label>
-           <input  type="text" required placeholder="Introduce tu nombre de usuario"  v-model = "sRegisterEmail" >
+           <input  type="text" required v-model = "sRegisterEmail" >
            <label><b>Nombre de usuario</b></label>
-           <input  type="text" required placeholder="Introduce tu nombre" v-model = "sNombre" >
+           <input  type="text" required  v-model = "sNombre" >
            <label><b>Contraseña</b></label>
-           <input  type="password" required placeholder="Introduce tu contraseña" v-model = "sRegisterPassword" >
+           <input  type="password" required  v-model = "sRegisterPassword" >
            <label><b>Repite la contraseña</b></label>
-           <input  type="password" required placeholder="Repite la contraseña" v-model = "sRegisterPassword2" >
-           <label  v-if= "lblError" ><b>Las contraseñas no coinciden</b></label>
-           <input  type="radio" name="genero" value="hombre" v-model = "blHombre"><b> Hombre</b>
-           <input  type="radio" name="genero" value="mujer" required placeholder="mujer" v-model = "blMujer"><b> Mujer</b>
+           <input  type="password" required  v-model = "sRegisterPassword2" >
+
+
+           <label class = "error" v-if= "lblError" ><b>Las contraseñas no coinciden.<br></b></label>
+
+          <label class = "error" v-if= "lblError2" ><b>La contraseña debe tener al menos 6 caracteres.<br></b></label>
+
+          <label class = "error" v-if= "lblError3" ><b>Debes rellenar todos los campos.</b></label><br>
+
+           <input  type="radio" name="genero" value="hombre" v-model = "sGenero"><b> Hombre</b>
+           <input  type="radio" name="genero" value="mujer" required placeholder="mujer" v-model = "sGenero"><b> Mujer</b>
            <br><br><label for="psw"><b>Introduce tu fecha de nacimiento</b></label>
            <input type="date">
            <br><br>

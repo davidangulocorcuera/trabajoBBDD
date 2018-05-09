@@ -9,6 +9,7 @@ import firestore from 'firebase/firestore'
 import Chat from 'vue-beautiful-chat'
 
 
+
 Vue.config.productionTip = false
 
 // Initialize Firebase

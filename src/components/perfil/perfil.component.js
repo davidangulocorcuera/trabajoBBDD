@@ -6,6 +6,7 @@ class Perfil{
   this.name = datos.nombreUsuario
     this.email = datos.email
   this.edad = datos.edad
+    this.genero = datos.genero
   console.log(this.name)
   }
 }
