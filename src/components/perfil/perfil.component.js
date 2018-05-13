@@ -1,5 +1,6 @@
 import {EventBus} from '../../events/events_bus';
 import firebase from 'firebase'
+import chat from '../chat'
 
 class Perfil{
   constructor(datos){
@@ -7,13 +8,14 @@ class Perfil{
     this.email = datos.email
   this.edad = datos.edad
     this.genero = datos.genero
+    this.edad = datos.edad
   console.log(this.name)
   }
 }
 
 export default {
   name: 'perfil',
-  components: {},
+  components: {'chat':chat},
   props: [],
   data () {
     return {

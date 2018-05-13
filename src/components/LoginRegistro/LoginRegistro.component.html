@@ -17,6 +17,12 @@
            <input type="checkbox" checked="checked" name="remember"> Recordarme
            </label>
         </div>
+        <div class = "incioRedes">
+          <button class = "google" v-on:click="inicioGoogle" type="submit">Google</button>
+          <button class = "facebook" v-on:click="inicioFacebook" type="submit">Facebook</button>
+          <button  type="submit">Twitter</button>
+        </div>
+
         <!-- registro1-->
         <div class="panelLogin"  v-if= "btLoginRegister2">
            <label><b>E-mail</b></label>
@@ -27,18 +33,13 @@
            <input  type="password" required  v-model = "sRegisterPassword" >
            <label><b>Repite la contraseña</b></label>
            <input  type="password" required  v-model = "sRegisterPassword2" >
-
-
            <label class = "error" v-if= "lblError" ><b>Las contraseñas no coinciden.<br></b></label>
-
-          <label class = "error" v-if= "lblError2" ><b>La contraseña debe tener al menos 6 caracteres.<br></b></label>
-
+           <label class = "error" v-if= "lblError2" ><b>La contraseña debe tener al menos 6 caracteres.<br></b></label>
           <label class = "error" v-if= "lblError3" ><b>Debes rellenar todos los campos.</b></label><br>
-
            <input  type="radio" name="genero" value="hombre" v-model = "sGenero"><b> Hombre</b>
-           <input  type="radio" name="genero" value="mujer" required placeholder="mujer" v-model = "sGenero"><b> Mujer</b>
-           <br><br><label for="psw"><b>Introduce tu fecha de nacimiento</b></label>
-           <input type="date">
+           <input  type="radio" name="genero" value="mujer" required placeholder="mujer" v-model = "sGenero"><b> Mujer</b><br>
+           <br><br><label for="psw"><b>Introduce tu  edad</b></label>
+          <input class = "edad" type="number" name="edad" min="18" max="99" step="1"  required="required" v-model = "iEdad">
            <br><br>
            <button  class = "botones" v-on:click="btnRegistrar2" type="submit">Continuar</button>
            <button class = "botonCancelar" v-on:click="btnCancelar" type="submit">Cancelar</button>
@@ -76,6 +77,6 @@
      </div>
        </div>
 <div class = "logged" v-show = "this.props_blIsLogin">
-   <button  class = "botones"  v-on:click="logout" type="submit">logout</button>
+   <button  class = "botones"  v-on:click="logout" type="submit">lgout</button>
 </div>
 </section>

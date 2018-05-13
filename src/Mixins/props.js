@@ -12,6 +12,7 @@ export default{
   computed:{
   setPerfil(id,datosPerfil) {
     props_objPerfil = new Perfil(id,datosPerfil)
+
   }
   },
   data(){

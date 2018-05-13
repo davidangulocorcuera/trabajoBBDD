@@ -124,7 +124,26 @@
    .error{
      color: red;
    }
-
+   .edad{
+     font-family: Poiret One, cursive ;
+     font-size: 30px;
+    font-weight: bolder;
+   }
+  .inicioRedes{
+    margin-bottom:5%;
+  }
+   .google{
+     background: #007600;
+     color:white;
+     font-size: 2rem;
+     font-family: Poiret One, cursive ;
+   }
+   .facebook{
+     background: #0D558D;
+     font-family: Poiret One, cursive ;
+     color:white;
+     font-size: 2rem;
+   }
      @media screen and (max-width: 300px) {
          span.psw {
              display: block;
