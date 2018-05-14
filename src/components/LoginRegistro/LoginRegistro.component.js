@@ -26,9 +26,68 @@ export default {
       sGenero: '',
       edad: 0,
       sGustosMusicales: [],
+      gustosDisponibles: [
+        {
+          name: "Rock 'n Roll",
+          value: "rock",
+          checked: false
+        },
+        {
+          name:"Blues",
+          value:"blues",
+          checked:  false
+        },
+        {
+          name:"Flamenco",
+          value:"flamenco",
+          checked: false
+        },        {
+          name:"Heavy Metal",
+          value:"heavy",
+          checked: false
+        },
+        {
+          name:"Rap",
+          value:"rap",
+          checked: false
+        },
+        {
+          name:"Musica Clásica",
+          value:"musicaClasica",
+          checked: false
+        },
+        {
+          name:"Trap",
+          value:"trap",
+          checked: false
+        },
+        {
+          name:"Boleros",
+          value:"boleros",
+          checked: false
+        },
+        {
+          name:"Tangos",
+          value:"tangos",
+          checked: false
+        },
+        {
+          name:"Techno",
+          value:"techno",
+          checked: false
+        },
+        {
+          name:"Hardcore",
+          value:"hardcore",
+          checked: false
+        },
+        {
+          name:"Punk",
+          value:"punk",
+          checked: false
+        },
 
-
-
+      ]
     }
   },
   created: function() {
@@ -170,35 +229,33 @@ export default {
       this.btLoginRegister3 = false
 
     },
-    btnRegistrarse: function(event) {
-      var that = this
+    btnRegistrarse(event) {
       firebase.auth().createUserWithEmailAndPassword(this.sRegisterEmail, this.sRegisterPassword).then(
-
-        function(user) {
-          var docRef = firebase.firestore().collection("perfiles");
-          user.sendEmailVerification()
+        user => {
+          let docRef = firebase.firestore().collection("perfiles");
+          user.sendEmailVerification();
           docRef.doc(user.uid + "").set({
-            email: that.sRegisterEmail,
-            nombreUsuario: that.sNombre,
-            genero: that.sGenero,
-            edad: that.iEdad
-            /*gustosMusicales: that.gustosMusicales*/
-          })
+            email: this.sRegisterEmail,
+            nombreUsuario: this.sNombre,
+            genero: this.sGenero,
+            edad: this.iEdad,
+            gustosMusicales: this.gustosDisponibles.filter(gusto => gusto.checked).map(gusto => gusto.value)
+          });
           alert("tu cuenta fue creada");
-          that.btLoginRegister3 = false
-          that.btLoginRegister = true
-          that.sGustosMusicales = []
-
-        },
-        function(err) {
-          console.log(err)
-          alert(err);
-          this.btLoginRegister2 = true
-          this.btLoginRegister3 = false
-
-        }
-      );
+          this.btLoginRegister3 = false;
+          this.btLoginRegister = true;
+          this.sGustosMusicales = []
+      }, err => {
+        console.error(err);
+        alert(err);
+        this.btLoginRegister2 = true;
+        this.btLoginRegister3 = false;
+      });
     },
+    /*function(event) {
+      var that = this
+
+    },*/
     btnLogin: function(event) {
       var provider = new firebase.auth.GoogleAuthProvider();
       firebase.auth().signInWithEmailAndPassword(this.sLoginEmail, this.sLoginPassword).then(

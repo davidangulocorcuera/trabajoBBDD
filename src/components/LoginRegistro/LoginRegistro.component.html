@@ -1,82 +1,71 @@
 <section class="login-registro">
-  <div class = "loginRegisterClass"  v-show = "!this.props_blIsLogin">
-   <div class="login">
+  <div class="loginRegisterClass" v-show="!this.props_blIsLogin">
+    <div class="login">
       <!-- login-->
 
-        <div class="imgcontainer">
-           <img src="../../assets/logo3.png" alt="Avatar" class="avatar">
+      <div class="imgcontainer">
+        <img src="../../assets/logo3.png" alt="Avatar" class="avatar">
+      </div>
+      <div class="panelLogin" v-if="btLoginRegister">
+        <label><b>E-mail</b></label>
+        <input type="text" placeholder="Introduce tu E-mail" name="E-mailInicio" v-model="sLoginEmail" required>
+        <label><b>Contraseña</b></label>
+        <input type="password" required placeholder="Introduce tu contraseña" name="contraseñaInicio"
+               v-model="sLoginPassword">
+        <button v-on:click="btnLogin" class="botones" type="submit">Iniciar Sesion</button>
+        <button class="botones" v-on:click="btnRegistrar1" type="submit">Registrarse</button>
+        <label>
+          <input type="checkbox" checked="checked" name="remember"> Recordarme
+        </label><br><br>
+        <button src="../../assets/logo3.png" class="google" v-on:click="inicioGoogle" type="submit">Google</button>
+        <button class="facebook" v-on:click="inicioFacebook" type="submit">Facebook</button>
+        <button class="twitter" type="submit">Twitter</button>
+      </div>
+
+
+      <!-- registro1-->
+      <div class="panelLogin" v-if="btLoginRegister2">
+        <label><b>E-mail</b></label>
+        <input type="email" required v-model="sRegisterEmail">
+        <label><b>Nombre de usuario</b></label>
+        <input type="text" required v-model="sNombre">
+        <label><b>Contraseña</b></label>
+        <input type="password" required v-model="sRegisterPassword">
+        <label><b>Repite la contraseña</b></label>
+        <input type="password" required v-model="sRegisterPassword2">
+        <label class="error" v-if="lblError"><b>Las contraseñas no coinciden.<br></b></label>
+        <label class="error" v-if="lblError2"><b>La contraseña debe tener al menos 6 caracteres.<br></b></label>
+        <label class="error" v-if="lblError3"><b>Debes rellenar todos los campos.</b></label><br>
+        <input type="radio" name="genero" value="hombre" v-model="sGenero"><b> Hombre</b>
+        <input type="radio" name="genero" value="mujer" required placeholder="mujer" v-model="sGenero"><b> Mujer</b><br>
+        <br><br><label for="psw"><b>Introduce tu edad</b></label>
+        <input class="edad" type="number" name="edad" min="18" max="99" step="1" required="required" v-model="iEdad">
+        <br><br>
+        <button class="botones" v-on:click="btnRegistrar2" type="submit">Continuar</button>
+        <button class="botonCancelar" v-on:click="btnCancelar" type="submit">Cancelar</button>
+        <label>
+        </label>
+      </div>
+      <!-- registro2 -->
+      <div class="panelLogin" v-if="btLoginRegister3">
+        <label><b>Selecciona tus gustos musicales</b></label>
+
+        <div class="seleccion">
+          <label v-for="gusto in gustosDisponibles" style="display: block">
+            <input type="checkbox" v-model="gusto.checked">
+            {{ gusto.name }}
+            </label>
         </div>
-        <div class="panelLogin"  v-if= "btLoginRegister">
-           <label><b>E-mail</b></label>
-           <input  type="text"  placeholder="Introduce tu E-mail" name="E-mailInicio" v-model = "sLoginEmail" required>
-           <label><b>Contraseña</b></label>
-           <input  type="password" required placeholder="Introduce tu contraseña" name="contraseñaInicio" v-model = "sLoginPassword" >
-           <button v-on:click="btnLogin" class = "botones" type="submit">Iniciar Sesion</button>
-           <button class = "botones" v-on:click="btnRegistrar1" type="submit">Registrarse</button>
-           <label>
-           <input type="checkbox" checked="checked" name="remember"> Recordarme
-           </label><br><br>
-          <button class = "google" v-on:click="inicioGoogle" type="submit">Google</button>
-          <button class = "facebook" v-on:click="inicioFacebook" type="submit">Facebook</button>
-          <button  class = "twitter" type="submit">Twitter</button>
-        </div>
 
 
-
-        <!-- registro1-->
-        <div class="panelLogin"  v-if= "btLoginRegister2">
-           <label><b>E-mail</b></label>
-           <input  type="text" required v-model = "sRegisterEmail" >
-           <label><b>Nombre de usuario</b></label>
-           <input  type="text" required  v-model = "sNombre" >
-           <label><b>Contraseña</b></label>
-           <input  type="password" required  v-model = "sRegisterPassword" >
-           <label><b>Repite la contraseña</b></label>
-           <input  type="password" required  v-model = "sRegisterPassword2" >
-           <label class = "error" v-if= "lblError" ><b>Las contraseñas no coinciden.<br></b></label>
-           <label class = "error" v-if= "lblError2" ><b>La contraseña debe tener al menos 6 caracteres.<br></b></label>
-          <label class = "error" v-if= "lblError3" ><b>Debes rellenar todos los campos.</b></label><br>
-           <input  type="radio" name="genero" value="hombre" v-model = "sGenero"><b> Hombre</b>
-           <input  type="radio" name="genero" value="mujer" required placeholder="mujer" v-model = "sGenero"><b> Mujer</b><br>
-           <br><br><label for="psw"><b>Introduce tu  edad</b></label>
-          <input class = "edad" type="number" name="edad" min="18" max="99" step="1"  required="required" v-model = "iEdad">
-           <br><br>
-           <button  class = "botones" v-on:click="btnRegistrar2" type="submit">Continuar</button>
-           <button class = "botonCancelar" v-on:click="btnCancelar" type="submit">Cancelar</button>
-           <label>
-           </label>
-        </div>
-        <!-- registro2 -->
-        <div class="panelLogin"  v-if= "btLoginRegister3">
-           <label><b>Selecciona tus gustos musicales</b></label>
-
-           <div class = "seleccion">
-
-              <input  type="checkbox" name="rock" value="Rock 'n Roll"> Rock 'n Roll <img src="../../assets/rock.png" alt="rock" width="7%" height="7%" v-model = "sGustosMusicales[0]"><br>
-              <input type="checkbox" name="blues" value="Blues" > Blues <img src="../../assets/blues.png" alt="blues" width="7%" height="7%" v-model = "sGustosMusicales[1]"><br>
-              <input type="checkbox" name="flamenco" value="Flamenco"> Flamenco <img src="../../assets/flamenco.png" alt="flamenco" width="7%" height="7%" v-model = "sGustosMusicales[2]"><br>
-              <input type="checkbox" name="heavy" value="Heavy Metal"> Heavy Metal <img src="../../assets/heavy.png" alt="heavy" width="7%" height="10%" v-model = "sGustosMusicales[3]"><br>
-              <input type="checkbox" name="rap" value="Rap" > Rap <img src="../../assets/rap.png" alt="rap" width="7%" height="7%" v-model = "sGustosMusicales[4]"><br>
-              <input type="checkbox" name="musicaClasica" value=" Música Clásica"> Música Clásica <img src="../../assets/clasica.png" alt="musicaClasica" width="7%" height="7%" v-model = "sGustosMusicales[5]"><br>
-              <input type="checkbox" name="trap" value=" Trap"> Trap <img src="../../assets/trap.png" alt="trap" width="7%" height="7%" v-model = "sGustosMusicales[6]"><br>
-              <input type="checkbox" name="boleros" value="Boleros"> Boleros <img src="../../assets/bolero.png" alt="boleros" width="7%" height="7%" v-model = "sGustosMusicales[7]"><br>
-              <input type="checkbox" name="tango" value="Tangos"> Tangos   <img src="../../assets/tango.png" alt="tangos" width="7%" height="7%" v-model = "sGustosMusicales[8]"><br>
-              <input type="checkbox" name="techno" value="Techno"> Techno <img src="../../assets/techno.png" alt="techno" width="7%" height="7%" v-model = "sGustosMusicales[9]"><br>
-              <input type="checkbox" name="hardcore" value="Hardcore"> Hardcore <img src="../../assets/hardcore.png" alt="hardcore" width="7%" height="7%" v-model = "sGustosMusicales[10]"><br>
-              <input type="checkbox" name="punk" value="Punk"> Punk <img src="../../assets/punk.png" alt="punk" width="7%" height="7%" v-model = "sGustosMusicales[11]">
-
-           </div>
-
-
-
-           <button  class = "botones" v-on:click="btnRegistrarse" type="submit">Registrarse</button>
-           <button class = "botonCancelar" v-on:click="btnVolver" type="submit">Volver</button>
-           <label>
-           </label>
-        </div>
-     </div>
-       </div>
-<div class = "logged" v-show = "this.props_blIsLogin">
-   <button  class = "botones"  v-on:click="logout" type="submit">lgout</button>
-</div>
+        <button class="botones" v-on:click="btnRegistrarse" type="submit">Registrarse</button>
+        <button class="botonCancelar" v-on:click="btnVolver" type="submit">Volver</button>
+        <label>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="logged" v-show="this.props_blIsLogin">
+    <button class="botones" v-on:click="logout" type="submit">lgout</button>
+  </div>
 </section>
