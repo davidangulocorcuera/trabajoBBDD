@@ -9,6 +9,7 @@ class Perfil{
   this.edad = datos.edad
     this.genero = datos.genero
     this.edad = datos.edad
+    this.gustosMusicales = datos.gustosMusicales
   console.log(this.name)
   }
 }

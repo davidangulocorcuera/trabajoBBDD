@@ -1,8 +1,12 @@
 const functions = require('firebase-functions');
+const admin = require('firebase-admin');
+const crypto = require('crypto');
+admin.initializeApp();
 
-// // Create and Deploy Your First Cloud Functions
-// // https://firebase.google.com/docs/functions/write-firebase-functions
-//
-// exports.helloWorld = functions.https.onRequest((request, response) => {
-//  response.send("Hello from Firebase!");
-// });
+exports.HashingUsername = functions.firestore
+  .document('perfiles/{userId}')
+  .onCreate((snap, context) => {
+    let data = snap.data();
+    let hash = crypto.createHash('md5').update(data.nombreUsuario).digest("hex");
+    return snap.ref.set({ hash }, {merge: true});
+});
